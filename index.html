@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khas — Brand Partnerships & Talent Representation</title>
+  <meta name="description" content="Khas is a boutique brand partnership agency connecting Punjabi and South Asian artists with the world's most culturally relevant brands." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #080808;
+      --off-black: #111111;
+      --dark: #1a1a1a;
+      --border: rgba(255,255,255,0.08);
+      --white: #ffffff;
+      --off-white: #e8e4dc;
+      --muted: rgba(255,255,255,0.45);
+      --gold: #c9a84c;
+      --gold-dim: rgba(201,168,76,0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 60px;
+      background: linear-gradient(to bottom, rgba(8,8,8,0.95) 0%, transparent 100%);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 44px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+      border: 0.5px solid rgba(255,255,255,0.3);
+      padding: 10px 24px;
+      transition: all 0.3s;
+    }
+
+    .nav-cta:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 60px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 40%, rgba(201,168,76,0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%);
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 0.5px;
+      background: var(--gold);
+    }
+
+    .hero-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 8vw, 110px);
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      position: relative;
+      max-width: 900px;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      color: var(--off-white);
+    }
+
+    .hero-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 64px;
+      position: relative;
+    }
+
+    .hero-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--muted);
+      max-width: 360px;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: var(--white);
+      text-decoration: none;
+      padding: 14px 36px;
+      transition: all 0.3s;
+    }
+
+    .btn-primary:hover { background: var(--off-white); }
+
+    .btn-ghost {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-ghost::after {
+      content: '→';
+      font-size: 14px;
+    }
+
+    .btn-ghost:hover { color: var(--white); }
+
+    /* ── MARQUEE ── */
+    .marquee-wrap {
+      border-top: 0.5px solid var(--border);
+      border-bottom: 0.5px solid var(--border);
+      padding: 16px 0;
+      overflow: hidden;
+      background: var(--off-black);
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 60px;
+      animation: marquee 20s linear infinite;
+      white-space: nowrap;
+    }
+
+    .marquee-track span {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    .marquee-track .dot {
+      color: var(--gold);
+      letter-spacing: 0;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ── ABOUT ── */
+    .about {
+      padding: 140px 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .about-label {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .about-label::before {
+      content: '01';
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .about-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 300;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+
+    .about-headline em { font-style: italic; color: var(--off-white); }
+
+    .about-body {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 32px;
+    }
+
+    .about-body strong {
+      color: var(--white);
+      font-weight: 400;
+    }
+
+    .about-stat-row {
+      display: flex;
+      gap: 48px;
+      margin-top: 48px;
+      padding-top: 48px;
+      border-top: 0.5px solid var(--border);
+    }
+
+    .stat-item {}
+
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 44px;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    /* ── SERVICES ── */
+    .services {
+      padding: 140px 60px;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 80px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .section-label::before {
+      content: attr(data-num);
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 300;
+      line-height: 1.1;
+    }
+
+    .section-title em { font-style: italic; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+    }
+
+    .service-card {
+      background: var(--black);
+      padding: 52px 44px;
+      transition: background 0.3s;
+    }
+
+    .service-card:hover { background: var(--off-black); }
+
+    .service-num {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      margin-bottom: 32px;
+    }
+
+    .service-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 300;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .service-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* ── NICHES ── */
+    .niches {
+      padding: 140px 60px;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .niches-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: 80px;
+    }
+
+    .niche-item {
+      background: var(--black);
+      padding: 40px 36px;
+      transition: background 0.3s;
+    }
+
+    .niche-item:hover { background: var(--off-black); }
+
+    .niche-icon {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .niche-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 300;
+      margin-bottom: 10px;
+    }
+
+    .niche-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── WHY ── */
+    .why {
+      padding: 140px 60px;
+      background: var(--off-black);
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 120px;
+      margin-top: 80px;
+    }
+
+    .why-item {
+      border-top: 0.5px solid var(--border);
+      padding-top: 32px;
+      margin-bottom: 48px;
+    }
+
+    .why-num {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .why-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 300;
+      margin-bottom: 12px;
+    }
+
+    .why-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      padding: 160px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201,168,76,0.05) 0%, transparent 70%);
+    }
+
+    .cta-eyebrow {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+      position: relative;
+    }
+
+    .cta-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(44px, 7vw, 96px);
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      margin-bottom: 52px;
+      position: relative;
+    }
+
+    .cta-headline em { font-style: italic; }
+
+    .cta-email {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+      border-bottom: 0.5px solid var(--gold);
+      padding-bottom: 4px;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    .cta-email:hover { color: var(--gold); }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 52px 60px;
+      border-top: 0.5px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-copy {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      nav { padding: 24px 24px; }
+      .nav-links { display: none; }
+      .hero { padding: 0 24px 60px; }
+      .hero-bottom { flex-direction: column; align-items: flex-start; gap: 32px; }
+      .about { padding: 80px 24px; grid-template-columns: 1fr; gap: 48px; }
+      .services { padding: 80px 24px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .niches { padding: 80px 24px; }
+      .niches-grid { grid-template-columns: 1fr 1fr; }
+      .why { padding: 80px 24px; }
+      .why-grid { grid-template-columns: 1fr; gap: 0; }
+      .cta-section { padding: 100px 24px; }
+      footer { padding: 40px 24px; flex-direction: column; gap: 28px; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+      .section-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Khas</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="mailto:info@khas.agency" class="nav-cta">Work With Us</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-eyebrow">Brand Partnerships & Talent Representation</div>
+    <h1 class="hero-headline">
+      We forge<br>
+      <em>partnerships</em><br>
+      that last.
+    </h1>
+    <div class="hero-bottom">
+      <p class="hero-desc">
+        Khas connects Punjabi and South Asian artists with culturally aligned brands — building long-term ambassadorships, not one-off posts.
+      </p>
+      <div class="hero-actions">
+        <a href="mailto:info@khas.agency" class="btn-primary">Start a Partnership</a>
+        <a href="#about" class="btn-ghost">Our story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>Brand Partnerships</span><span class="dot">✦</span>
+      <span>Talent Representation</span><span class="dot">✦</span>
+      <span>Punjabi Music</span><span class="dot">✦</span>
+      <span>South Asian Diaspora</span><span class="dot">✦</span>
+      <span>Ambassadorships</span><span class="dot">✦</span>
+      <span>Sponsored Content</span><span class="dot">✦</span>
+      <span>Cultural Marketing</span><span class="dot">✦</span>
+      <span>Khas Agency</span><span class="dot">✦</span>
+      <!-- duplicate for seamless loop -->
+      <span>Brand Partnerships</span><span class="dot">✦</span>
+      <span>Talent Representation</span><span class="dot">✦</span>
+      <span>Punjabi Music</span><span class="dot">✦</span>
+      <span>South Asian Diaspora</span><span class="dot">✦</span>
+      <span>Ambassadorships</span><span class="dot">✦</span>
+      <span>Sponsored Content</span><span class="dot">✦</span>
+      <span>Cultural Marketing</span><span class="dot">✦</span>
+      <span>Khas Agency</span><span class="dot">✦</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div>
+      <div class="about-label">Who We Are</div>
+      <h2 class="about-headline">
+        Not every<br>partnership is<br><em>special. Ours are.</em>
+      </h2>
+      <div class="about-stat-row">
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Cultural Fluency</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">35M+</div>
+          <div class="stat-label">Diaspora Reached</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">VA</div>
+          <div class="stat-label">Based. Global</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="about-body">
+        Khas is a boutique brand partnership agency built on one truth: <strong>the Punjabi diaspora is one of the most engaged, high-spending, and underserved audiences in Western markets.</strong>
+      </p>
+      <p class="about-body">
+        We represent Punjabi and South Asian artists and connect them with brands who want authentic access to this community. Not generic influencer posts — <strong>real, long-term ambassadorships</strong> that build genuine trust between brand and audience.
+      </p>
+      <p class="about-body">
+        No other agency is doing this. That is our lane.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-header">
+      <div>
+        <div class="section-label" data-num="02">What We Do</div>
+        <h2 class="section-title">Our <em>services</em></h2>
+      </div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <div class="service-name">Talent Representation</div>
+        <p class="service-desc">We represent Punjabi and South Asian artists for brand partnerships — negotiating deals, managing campaigns, and protecting your interests at every stage.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-name">Brand Partnerships</div>
+        <p class="service-desc">We connect brands with artists whose audiences match their target market. Sponsored content, long-term ambassadorships, and full campaign management.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-name">Campaign Strategy</div>
+        <p class="service-desc">From brief to performance report — we handle the entire campaign lifecycle so brands get results and artists get paid on time, every time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY KHAS -->
+  <section class="why" id="why">
+    <div class="section-header">
+      <div>
+        <div class="section-label" data-num="04">Why Khas</div>
+        <h2 class="section-title">The lane nobody<br><em>else is in</em></h2>
+      </div>
+    </div>
+    <div class="why-grid">
+      <div>
+        <div class="why-item">
+          <div class="why-num">01</div>
+          <div class="why-title">Cultural Access</div>
+          <p class="why-desc">We do not just understand this audience — we are part of it. No other Western agency has authentic access to the Punjabi music community and the diaspora that follows it.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-num">02</div>
+          <div class="why-title">Ambassadorships, Not Ads</div>
+          <p class="why-desc">We build long-term partnerships that feel natural and last. Not one-off posts that disappear in 24 hours. Real relationships between talent and brand that audiences trust.</p>
+        </div>
+      </div>
+      <div>
+        <div class="why-item">
+          <div class="why-num">03</div>
+          <div class="why-title">Niche Precision</div>
+          <p class="why-desc">The Punjabi diaspora in the US, Canada, and the UK is 35 million strong, has significant disposable income, and acts on trusted recommendations. We connect brands with that audience directly.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-num">04</div>
+          <div class="why-title">End to End</div>
+          <p class="why-desc">From pitch to performance report, we manage everything. Brands get results. Artists get paid. No loose ends, no surprises.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="contact">
+    <div class="cta-bg"></div>
+    <div class="cta-eyebrow">Let's Build Something</div>
+    <h2 class="cta-headline">
+      Ready to reach<br><em>the audience</em><br>nobody else can?
+    </h2>
+    <a href="mailto:info@khas.agency" class="cta-email">info@khas.agency</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Khas</div>
+    <ul class="footer-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="mailto:info@khas.agency">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2025 Khas. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
